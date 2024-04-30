@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/app-game.iml" filepath="$PROJECT_DIR$/.idea/app-game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/msFront.iml" filepath="$PROJECT_DIR$/msFront.iml" />
     </modules>
   </component>
 </project>

@@ -16,7 +16,7 @@ public class QuizzRepository {
 
 
 
-    public List<Map<String, Object>> callspRandQuestion(int theme, int level) {
+    public List<Map<String, Object>> callSpRandQuestion(int theme, int level) {
         String sql = "CALL spRandQuestion(?,?)";
         return jdbcTemplate.queryForList(sql, theme, level);
     }

@@ -26,9 +26,6 @@ public class QuizzService {
     }
 
     public List<Map<String, Object>> callUserRepo(int theme, int level){
-        List<Map<String, Object>> jsonElt = quizzRepository.callspRandQuestion(theme, level);
-
-        //jsonElt.stream().forEach(q => equals(quizzRepository.callspRandQuestion()));
-        return jsonElt;
+        return quizzRepository.callSpRandQuestion(theme, level);
     }
 }
