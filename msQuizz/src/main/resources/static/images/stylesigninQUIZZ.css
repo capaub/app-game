@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+background-image: url('fond_quizz1.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+
+.container{
+height: auto;
+align-content: center;
+}
+
+.card{
+height: 460px;
+margin-top: -25px;
+margin-bottom: auto;
+margin-left: 30px;
+width: 500px;
+background-color: rgba(0, 0, 0, 0) !important;
+transition: 0.2s all ease-out;
+overflow: hidden;
+filter: blur(0.5px);
+}
+
+.card:hover{
+  filter: blur(0);
+}
+
+.card-header h3{
+color: white;
+}
+
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #04cbf3;
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+background-color: #04cbf3;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color:#dc06c0;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
+
+img{
+  margin:0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: 128px;
+  width:130px;
+}
+
+
+.card2 {
+  margin-top:295px;
+  width: 500px;
+  height: 80px;
+  transition: all 0.2s;
+  position: relative;
+  cursor: pointer;
+}
+  
+.card:hover {
+  transform: scale(1.035);
+}
+
+
+@keyframes dash_682 {
+  72.5% {
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
