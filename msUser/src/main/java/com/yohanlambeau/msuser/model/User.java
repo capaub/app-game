@@ -1,7 +1,10 @@
 package com.yohanlambeau.msuser.model;
 
-public class User {
+import jakarta.persistence.*;
 
+@Entity
+public class User {
+    @Id
     private int idUser;
     private String pseudo;
     private String mail;
