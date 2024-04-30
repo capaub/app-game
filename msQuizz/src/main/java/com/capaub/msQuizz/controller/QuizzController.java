@@ -18,5 +18,6 @@ public class QuizzController {
     @ResponseBody
     public String callSp(@RequestParam int theme, int level){
         return quizzService.convertListMapToJson(quizzService.callUserRepo(theme, level));
+//        return quizzService.callUserRepo(theme, level).toString();
     }
 }
