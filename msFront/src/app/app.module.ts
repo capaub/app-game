@@ -4,17 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
+import { QuizzComponent } from './quizz/quizz.component';
+import {HttpClientModule} from "@angular/common/http";
+import {QuizzService} from "./quizz.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+    MenuComponent,
+    QuizzComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [QuizzService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
