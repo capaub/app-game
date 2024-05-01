@@ -1,0 +1,8 @@
+<ul>
+  <strong> {{ quizz.questionO.question }} </strong>
+  <ng-container *ngFor="let response of quizz.responses">
+    <li>
+      <strong> {{ response.response }} </strong> {{ response.id}}  {{ response.isTrue}}
+    </li>
+  </ng-container>
+</ul>
