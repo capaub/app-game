@@ -1,5 +1,5 @@
 <h2>Liste des question</h2>
-<button (click)="showQuizz()">chargeur un quizz</button>
+<button (click)="showQuizz()">charger un quizz</button>
 <div id="currentQuestion" *ngFor="let step of quizzModels">
   <app-quizz [quizz]="step"></app-quizz>
 </div>
