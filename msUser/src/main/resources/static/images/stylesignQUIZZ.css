@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('fond_quizz1.jpg');
+background-image: url('neonq.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
@@ -15,7 +15,7 @@ align-content: center;
 
 .card{
 height: 460px;
-margin-top: -25px;
+margin-top: -65px;
 margin-bottom: auto;
 margin-left: 30px;
 width: 500px;
@@ -41,7 +41,7 @@ top: -45px;
 
 .input-group-prepend span{
 width: 50px;
-background-color: #04cbf3;
+background-color: #fd1823;
 color: black;
 border:0 !important;
 }
@@ -62,17 +62,6 @@ width: 20px;
 height: 20px;
 margin-left: 15px;
 margin-right: 5px;
-}
-
-.login_btn{
-color: black;
-background-color: #04cbf3;
-width: 100px;
-}
-
-.login_btn:hover{
-color: black;
-background-color:#dc06c0;
 }
 
 .links{
@@ -101,7 +90,7 @@ img{
   position: relative;
   cursor: pointer;
 }
-  
+
 .card:hover {
   transform: scale(1.035);
 }
@@ -117,4 +106,31 @@ img{
   }
 }
 
+.btn
+  {
+    margin: 5px;
+    padding: 10px 10px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #ffffffe6;
+    text-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    box-shadow: transparent;
+    border: 1px solid #ffffffc6;
+    transition: 0.5s ease;
+    user-select: none;
+  }
+
+  .btn:hover,
+  :focus {
+    color: #ffffff;
+    background: #ff0004;
+    border: 1px solid #fafafa;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px #ff4d00, 0 0 20px #ff7300, 0 0 50px #ff0000,
+      0 0 100px #e20909a6;
+  }
 

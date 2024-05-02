@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Login Page</title>
 
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <!--Custom styles-->
-    <link rel="stylesheet"  href="/images/stylesigninQUIZZ.css">
+    <link rel="stylesheet"  href="/images/stylesignQUIZZ.css">
 </head>
 <body>
 
@@ -26,7 +26,6 @@
                     <h3>Sign In</h3>
                     <div class="d-flex justify-content-end social_icon">
                     </div>
-
                 </div>
                 <div class="card-body">
                     <form th:action="@{/signin}"  method="post">
@@ -40,7 +39,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="email" name="email" class="form-control" placeholder="email">
+                            <input  type="email" name="email" class="form-control" placeholder="email">
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
@@ -48,17 +47,14 @@
                             </div>
                             <input type="password" name="password" class="form-control" placeholder="password">
                         </div>
-                    <div class="form-group">
-                        <input type="submit" value="signIn" class="btn float-right login_btn">
-                    </div>
+                        <div class="form-group">
+                            <input type="submit" value="signIn" class="btn">
+                        </div>
                     </form>
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
                         D'ont have already an account ?<a th:href="@{/signup}"> => Sign Up</a>
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <a th:href="@{/contact}"> Contact / Message</a>
                     </div>
                 </div>
             </div>
