@@ -25,7 +25,7 @@ public class QuizzService {
         }
     }
 
-    public List<Map<String, Object>> callUserRepo(int theme, int level){
+    public List<Map<String, Object>> callQuizz(int theme, int level){
         return quizzRepository.callSpRandQuestion(theme, level);
     }
 }

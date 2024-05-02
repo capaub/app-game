@@ -1,0 +1,10 @@
+<div>
+  <form method="post">
+    <fieldset>
+      <legend [attr.data-question-id]="quizz.questionO.id">{{ quizz.questionO.question }}</legend>
+      <ng-container *ngFor="let response of quizz.responses">
+        <button type="submit" value="{{response.id}}">{{response.response}}</button>
+      </ng-container>
+    </fieldset>
+  </form>
+</div>

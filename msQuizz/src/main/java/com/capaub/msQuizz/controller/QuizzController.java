@@ -1,12 +1,11 @@
 package com.capaub.msQuizz.controller;
 
 import com.capaub.msQuizz.service.QuizzService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+// pour autoriser l'appel d'angular
+@CrossOrigin(origins = "http://localhost:4200")
 public class QuizzController {
     private final QuizzService quizzService;
 
@@ -17,7 +16,7 @@ public class QuizzController {
     @GetMapping("/callSpRandQuestion")
     @ResponseBody
     public String callSp(@RequestParam int theme, int level){
-        return quizzService.convertListMapToJson(quizzService.callUserRepo(theme, level));
+        return quizzService.convertListMapToJson(quizzService.callQuizz(theme, level));
 //        return quizzService.callUserRepo(theme, level).toString();
     }
 }
