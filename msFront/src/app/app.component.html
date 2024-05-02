@@ -1,5 +1,12 @@
 <h2>Liste des question</h2>
 <button (click)="showQuizz()">charger un quizz</button>
-<div id="currentQuestion" *ngFor="let step of quizzModels">
-  <app-quizz [quizz]="step"></app-quizz>
+<div *ngIf="resp" >
+  <div [attr.data-questionId]="resp?.questionId">questionId : {{resp?.questionId}}</div>
+  <div [attr.data-responseId]="resp?.responseId">responseId : {{resp?.responseId}}</div>
+</div>
+<div>
+  <app-quizz (send)="resp = $event"
+             (nextIndex)="index = $event"
+             [quizz]="quizzModels[index]" *ngIf="quizzModels.length != index">
+  </app-quizz>
 </div>

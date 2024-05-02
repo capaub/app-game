@@ -8,13 +8,13 @@ import { QuizzService } from "./quizz.service";
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
-
   quizzModels!: QuizzModel[];
+  index= 0;
+  resp: { questionId:any; question:any; responseId:any; response:any; } | undefined
   constructor(private quizzService:QuizzService) {
   }
-  ngOnInit() {
 
-  }
+  ngOnInit() { }
 
   showQuizz(){
     this.quizzService.getQuizz()
