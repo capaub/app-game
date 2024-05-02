@@ -12,16 +12,13 @@ import lombok.Setter;
 public class Score_board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idScore_Board")
     private int idScore_Board;
-    @Column(name = "idUser")
-    private int idUser;
-    @Column(name = "idTheme")
-    private int idTheme;
-    @Column(name = "score")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private User user;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Theme theme;
     private int score;
-    @Column(name = "timer")
     private int timer;
-    @Column(name = "levelId")
-    private int levelId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Level level;
 }

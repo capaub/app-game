@@ -12,12 +12,10 @@ import lombok.Setter;
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idQuestion")
     private int idQuestion;
-    @Column(name = "description")
     private String description;
-    @Column(name = "levelId")
-    private int levelId;
-    @Column(name = "themeId")
-    private int themeId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Level level;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Theme theme;
 }

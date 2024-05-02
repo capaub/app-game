@@ -12,12 +12,9 @@ import lombok.Setter;
 public class Response {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idResponse")
     private int idResponse;
-    @Column(name = "description")
     private String description;
-    @Column(name = "questionId")
-    private int questionId;
-    @Column(name = "isTrue")
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Question question;
     private boolean isTrue;
 }
