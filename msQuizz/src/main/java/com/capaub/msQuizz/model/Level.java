@@ -12,8 +12,6 @@ import lombok.Setter;
 public class Level {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idLevel")
     private int idLevel;
-    @Column(name = "label")
     private String label;
 }

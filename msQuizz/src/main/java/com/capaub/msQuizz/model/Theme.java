@@ -12,8 +12,6 @@ import lombok.Setter;
 public class Theme {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idTheme")
     private int idTheme;
-    @Column(name = "categorieName")
     private String categorieName;
 }
