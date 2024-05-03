@@ -1,9 +1,4 @@
-.Body {
-  background-color: #000;
-  height: 100%;
-  position: relative;
-  z-index: -20;
-}
+
 
 .loader {
   margin-top: 110px;
@@ -202,9 +197,7 @@
     opacity: 0.5;
   }
 }
-.title{
-  padding: 6em;
-}
+
 .title-h2 {
   color: white;
   text-align: center;

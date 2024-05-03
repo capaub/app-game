@@ -4,3 +4,8 @@ body{
   padding: 0;
   min-height: 100vh;
 }
+app-root{
+  display: block;
+  background-color: black;
+  min-height: 100vh;
+}

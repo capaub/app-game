@@ -13,7 +13,6 @@ import { ScoreBoardComponent } from './score-board/score-board.component';
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
     QuizzComponent,
     ProfilComponent,
     ScoreBoardComponent

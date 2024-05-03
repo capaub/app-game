@@ -13,11 +13,18 @@ export class AppComponent implements OnInit{
   point: number= 0;
   resp: { questionId:any; question:any; responseId:any; response:any; } | undefined
 
+  displayProfile:boolean=false;
+  displayGame:boolean=false;
+  displayScoreBoard:boolean=false;
+
+
   constructor(private quizzService:QuizzService) { }
 
   ngOnInit() { }
 
   showQuizz(){
+    this.displayProfile = this.displayScoreBoard = false
+    this.displayGame = true
     this.quizzService.getQuizz()
       .subscribe((list: QuizzModel[])=> {
         this.quizzModels = list;
@@ -29,5 +36,15 @@ export class AppComponent implements OnInit{
     if (response?.isTrue){
       this.point += 1;
     }
+  }
+
+  showProfile() {
+    this.displayGame = this.displayScoreBoard = false
+    this.displayProfile = true
+  }
+
+  showScoreBoard() {
+    this.displayGame = this.displayProfile = false
+    this.displayScoreBoard = true
   }
 }
