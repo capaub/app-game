@@ -9,17 +9,25 @@ import { QuizzService } from "./quizz.service";
 })
 export class AppComponent implements OnInit{
   quizzModels!: QuizzModel[];
-  index= 0;
+  index: number= 0;
+  point: number= 0;
   resp: { questionId:any; question:any; responseId:any; response:any; } | undefined
-  constructor(private quizzService:QuizzService) {
-  }
+
+  constructor(private quizzService:QuizzService) { }
 
   ngOnInit() { }
 
   showQuizz(){
     this.quizzService.getQuizz()
-      .subscribe((list: any) => {
+      .subscribe((list: QuizzModel[])=> {
         this.quizzModels = list;
       });
+  }
+
+  public countPoint(responseId: number,quizz:QuizzModel) {
+    const response = quizz.responses.find(response => response.id == responseId)
+    if (response?.isTrue){
+      this.point += 1;
+    }
   }
 }

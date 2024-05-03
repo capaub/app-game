@@ -24,7 +24,8 @@
   <h1 [attr.data-questionId]="quizz.questionO.id">{{quizz.questionO.question}}</h1>
   <p>Index (nb question) : {{index}}</p>
   <ng-container *ngFor="let response of quizz.responses">
-    <button (click)="sendResponse(quizz.questionO.id,quizz.questionO.question,response.id,response.response)"
+    <button (click)="sendResponse(quizz.questionO.id,response.id,quizz)"
             [attr.data-responseId]="response.id" >{{response.response}}</button>
   </ng-container>
 </div>
+<div>Point : {{point}}</div>

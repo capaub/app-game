@@ -1,12 +1,7 @@
-<app-profil style="display: block; height:100vh">
-
-</app-profil>
-
-<!--
 <h2>Liste des question</h2>
 <button (click)="showQuizz()">charger un quizz</button>
 <div *ngIf="resp" >
-  <div [attr.data-questionId]="resp?.questionId">questionId : {{resp?.questionId}}</div>
+  <div [attr.data-questionId]="resp?.questionId" >questionId : {{resp?.questionId}}</div>
   <div [attr.data-responseId]="resp?.responseId">responseId : {{resp?.responseId}}</div>
 </div>
 <div>
@@ -15,4 +10,3 @@
              [quizz]="quizzModels[index]" *ngIf="quizzModels.length != index">
   </app-quizz>
 </div>
--->
