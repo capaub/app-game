@@ -1,135 +1,12 @@
+.Body{
+background-color: #000;
+}
 
 
-.Header-barnav
+.loader
 {
-
-  display: flex;
-  box-sizing: border-box;
-  color: white;
-  padding: 0%;
-  margin-right: 0%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  text-align: right;
-  padding-right: 45px;
-  height: 55px;
-}
-
-.title
-{
-  color:white;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.card1
-{
-  margin-top: 35px;
-  background-color: black;
-  width: 600px;
-  height: 600px;
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 6px;
-  box-shadow: 2px 2px 19px;
-  color: white;
-
-  margin-left: 535px;
-}
-
-.card1::before
-{
-  content: "";
-  position: absolute;
-  z-index: -19;
-  width: 610px;
-  height: 610px;
-  margin: auto;
-  background: rgb(255, 0, 0);
-  background: linear-gradient(135deg, rgb(215, 0, 0) 0%, rgb(255, 77, 0) 35%, rgb(215, 18, 0) 100%);
-  border-radius: 6px;
-}
-
-.card1::after
-{
-  content: "";
-  position: absolute;
-  z-index: -19;
-  width: 620px;
-  height: 620px;
-  margin: auto;
-  background: rgb(255, 0, 0);
-  background: linear-gradient(135deg, rgb(207, 0, 0) 0%, rgb(255, 55, 0) 35%, rgb(255, 55, 0) 100%);
-  border-radius: 6px;
-  filter: blur(20px);
-  transition: 2s;
-}
-
-.card1:hover::after
- {
-  animation: cardafter 2.5s infinite forwards;
-}
-
-@keyframes cardafter
-{
-  0% {
-    opacity: 2;
-  }
-
-  50% {
-    opacity: -1;
-  }
-
-  100% {
-    opacity: 2;
-  }
-
-}
-
-.btn
-  {
-    margin: 25px;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    border-radius: 8px;
-    font-size: 17px;
-    font-weight: 500;
-    color: #ffffffed;
-    text-shadow: none;
-    background: transparent;
-    cursor: pointer;
-    box-shadow: transparent;
-    border: 1px solid #fffffff6;
-    transition: 0.5s ease;
-    user-select: none;
-  }
-
-  .btn:hover,
-  :focus {
-    color: #ffffff;
-    background: #ff0000;
-    border: 1px solid #fafafa;
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
-    box-shadow: 0 0 5px #ff0000, 0 0 20px #ff7700, 0 0 50px #ff3700,
-      0 0 100px #ff0000;
-  }
-
-
-
-.loader {
-    margin-top: 10px;
-    margin-left: 50px;
+    margin-top: 100px;
+    margin-left: 15px;
     display: flex;
     width: 8rem;
     height: 8rem;
@@ -138,7 +15,8 @@
     align-items: center;
   }
 
-  .head {
+  .head
+  {
     width: 100%;
     height: 100%;
     background-color: #f92c2c;
@@ -149,7 +27,8 @@
     z-index: 1;
   }
 
-  .eye {
+  .eye
+  {
     display: flex;
     position: absolute;
     width: 4rem;
@@ -164,7 +43,8 @@
     animation: move 5s alternate infinite;
   }
 
-  .eye::before {
+  .eye::before
+  {
     content: "";
     display: flex;
     width: 1rem;
@@ -175,13 +55,15 @@
     animation: blink 4s ease-in-out alternate infinite;
   }
 
-  .flames {
+  .flames
+  {
     display: flex;
     position: absolute;
     z-index: 0;
   }
 
-  .particle {
+  .particle
+  {
     display: flex;
     position: absolute;
     background-color: #f94545;
@@ -191,7 +73,8 @@
     border-left: 5px solid #da0000;
   }
 
-  .flames::before {
+  .flames::before
+  {
     content: "";
     position: absolute;
     width: 8rem;
@@ -206,14 +89,16 @@
     animation: pulse 3s linear infinite;
   }
 
-  .particle:nth-child(1) {
+  .particle:nth-child(1)
+  {
     width: 4rem;
     height: 4rem;
     top: -6rem;
     animation: move 7s alternate-reverse infinite;
   }
 
-  .particle:nth-child(2) {
+  .particle:nth-child(2)
+  {
     width: 1.5rem;
     height: 1.5rem;
     top: -8rem;
@@ -221,7 +106,8 @@
     animation: move 1.5s  ease-in-out reverse infinite;
   }
 
-  .particle:nth-child(3) {
+  .particle:nth-child(3)
+  {
     width: 4rem;
     height: 4rem;
     top: -5rem;
@@ -229,14 +115,16 @@
     animation: move 8s alternate-reverse infinite;
   }
 
-  .particle:nth-child(4) {
+  .particle:nth-child(4)
+  {
     width: 3rem;
     height: 3rem;
     top: -7.5rem;
     animation: move 4s alternate-reverse infinite;
   }
 
-  .particle:nth-child(5) {
+  .particle:nth-child(5)
+  {
     width: 2rem;
     height: 2rem;
     top: -9rem;
@@ -244,7 +132,8 @@
     animation: move 2.5s alternate-reverse infinite;
   }
 
-  .particle:nth-child(6) {
+  .particle:nth-child(6)
+  {
     width: 2rem;
     height: 2rem;
     top: -6.8rem;
@@ -252,7 +141,8 @@
     animation: move 5s alternate-reverse infinite;
   }
 
-  .particle:nth-child(7) {
+  .particle:nth-child(7)
+  {
     width: 1rem;
     height: 1rem;
     top: -10rem;
@@ -260,7 +150,8 @@
     animation: move 1.2s alternate-reverse infinite;
   }
 
-  .particle:nth-child(8) {
+  .particle:nth-child(8)
+  {
     width: 1.3rem;
     height: 1.3rem;
     top: -7.5rem;
@@ -310,7 +201,8 @@
     }
   }
 
-  @keyframes pulse {
+  @keyframes pulse
+  {
     0% {
       opacity: 0.5;
     }
@@ -322,5 +214,154 @@
     100% {
       opacity: 0.5;
     }
+  }
+
+.title-h2
+{
+  color: white;
+  text-align: center;
+  margin: 0px;
+}
+
+.card-infos
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.image-user-user
+{
+  width: 15%;
+  margin: 10px;
+}
+
+.card-infoUser
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  color: white;
+
+  background-color: #000000;
+  padding: 0px 95px;
+  margin: 16px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px rgb(252, 67, 39);
+  color: white;
+
+}
+
+.card-infoUser-alreadyRight
+{
+  margin: 40px;
+}
+
+
+.card1
+{
+  margin-top: 5px;
+  background-color: rgb(236, 236, 236);
+  width: 550px;
+  height: 550px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 6px;
+  box-shadow: 2px 2px 19px;
+  color: rgb(248, 248, 248);
+
+  margin-left: 535px;
+}
+
+.card1::before
+{
+  content: "";
+  position: absolute;
+  z-index: -19;
+  width: 610px;
+  height: 610x;
+  margin: auto;
+  background: rgb(255, 0, 0);
+  background: linear-gradient(135deg, rgb(207, 0, 0) 0%, rgb(255, 55, 0) 35%, rgb(255, 55, 0) 100%);
+  border-radius: 6px;
+}
+
+.card1::after
+{
+  content: "";
+  position: absolute;
+  z-index: -19;
+  width: 560px;
+  height: 560px;
+  margin: auto;
+  background: rgb(255, 0, 0);
+  background: linear-gradient(135deg, rgb(207, 0, 0) 0%, rgb(255, 55, 0) 35%, rgb(255, 55, 0) 100%);
+  border-radius: 6px;
+  filter: blur(10px);
+  transition: 2s;
+}
+
+.card1:hover::after
+ {
+  animation: cardafter 2.5s infinite forwards;
+}
+
+@keyframes cardafter
+{
+  0% {
+    opacity: 2;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 2;
+  }
+
+}
+
+.org
+{
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  margin-right:50px;
+}
+
+.btn-returnHome
+  {
+    margin: 10px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 300;
+    color: #ffffff;
+    text-shadow: none;
+    background: transparent;
+    cursor: pointer;
+    box-shadow: transparent;
+    border: 1px solid #ffffff;
+    transition: 0.5s ease;
+    user-select: none;
+  }
+
+  .btn-returnHome:hover,
+  :focus {
+    color: #ffffff;
+    background: #ff0000;
+    border: 1px solid #fafafa;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+    box-shadow: 0 0 5px #ff0000, 0 0 20px #ff7700, 0 0 50px #ff3700,
+      0 0 100px #ff0000;
   }
 
