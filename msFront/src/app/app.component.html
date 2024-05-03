@@ -1,12 +1,50 @@
-<h2>Liste des question</h2>
-<button (click)="showQuizz()">charger un quizz</button>
-<div *ngIf="resp" >
-  <div [attr.data-questionId]="resp?.questionId" >questionId : {{resp?.questionId}}</div>
-  <div [attr.data-responseId]="resp?.responseId">responseId : {{resp?.responseId}}</div>
+<header class="Header">
+  <!--
+    <div class="title">
+      <h1 class="title-h1"> WELCOM HOME </h1>
+      <h2 class="title-h1"> , are you ready for a quizz ?!? </h2>
+    </div>
+  -->
+  <div class="card1">
+    <button (click)="showProfile()" class="btn">MY PROFIL</button>
+    <button (click)="showQuizz()" class="btn">START AND PLAY !!!</button>
+    <button (click)="showScoreBoard()" class="btn">CLASSEMENT</button>
+    <button class="btn">RETURN TO LOGIN</button>
+  </div>
+
+  <div class="loader">
+    <div class="head"></div>
+    <div class="flames">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+    <div class="eye"></div>
+  </div>
+</header>
+<div *ngIf="displayProfile">
+  <app-profil>
+
+  </app-profil>
 </div>
-<div>
+<!-- <div *ngIf="resp">
+  <div [attr.data-questionId]="resp?.questionId">questionId : {{ resp?.questionId }}</div>
+  <div [attr.data-responseId]="resp?.responseId">responseId : {{ resp?.responseId }}</div>
+</div> -->
+<div *ngIf="displayGame">
   <app-quizz (send)="resp = $event"
              (nextIndex)="index = $event"
              [quizz]="quizzModels[index]" *ngIf="quizzModels.length != index">
   </app-quizz>
+</div>
+
+<div *ngIf="displayScoreBoard">
+  <app-score-board>
+
+  </app-score-board>
 </div>
