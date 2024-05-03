@@ -18,4 +18,18 @@ export class QuizzComponent {
     this.nextIndex.emit(this.index + 1)
     this.index += 1;
   }
+
+
+ /* //affichage composant choix level-theme:
+ isClick()
+ {
+    // @ts-ignore
+    let element = event.currentTarget
+    // @ts-ignore
+    element.classList.toggle("selected")
+    console.log(element.classList)
+
+    //let elts= document.querySelectorAll(".btn")
+    //for(let i =0; i<elts.length, i++)
+ } */
 }
