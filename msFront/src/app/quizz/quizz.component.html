@@ -1,3 +1,25 @@
+
+
+<!-- Card choix level et theme -->
+<div class="Selection">
+
+  <div class="org1">
+    <button class="level btn">level 1</button>
+    <button class="level btn">level 2</button>
+    <button class="level btn">level 3</button>
+  </div>
+
+  <div class="org2">
+    <button (click)="isClick()" class="theme btn" >Theme 1</button>
+    <button class="theme btn">Theme 2</button>
+    <button class="theme btn">Theme 3</button>
+  </div>
+
+</div>
+
+
+
+<!-- quizz -->
 <div>
   <h1 [attr.data-questionId]="quizz.questionO.id">{{quizz.questionO.question}}</h1>
   <p>Index (nb question) : {{index}}</p>
