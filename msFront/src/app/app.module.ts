@@ -8,13 +8,15 @@ import { QuizzComponent } from './quizz/quizz.component';
 import {HttpClientModule} from "@angular/common/http";
 import {QuizzService} from "./quizz.service";
 import { ProfilComponent } from './profil/profil.component';
+import { ScoreBoardComponent } from './score-board/score-board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     QuizzComponent,
-    ProfilComponent
+    ProfilComponent,
+    ScoreBoardComponent
   ],
   imports: [
     BrowserModule,

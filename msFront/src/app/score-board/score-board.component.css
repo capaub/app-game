@@ -1,0 +1,60 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+/* MENU NAVBAR */
+.Header-nav{
+    display: flex;
+    padding: 2em;
+    border: solid white 2px;
+}
+.Header-nav-leftside{
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+
+}
+.Header-nav-rightside{
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5em;
+
+}
+.Header-nav-leftside-a, .Header-nav-rightside-a{
+    text-decoration: none;
+    color: white;
+
+}
+
+/* TABLEAU */
+.Body-section{
+    margin-top: 4em;
+    display: flex;
+    justify-content: center;
+}
+.Body-section-table{
+    width: 50%;
+}
+.Body-section-table-caption{
+    color: red;
+    padding-bottom: 1.5em;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+.Body-section-table-tr{
+    background-color: azure;
+    color: black;
+}
+.Body-section-table-tr-th{
+    background-color: blue;
+    padding: 1em;
+}
+.Body-section-table-tr-td{
+    padding: 0.5em;
+    text-align: center;
+}
