@@ -7,7 +7,7 @@
   -->
   <div class="card1">
     <button (click)="showProfile()" class="btn">MY PROFIL</button>
-    <button (click)="showQuizz()" class="btn">START AND PLAY !!!</button>
+    <button (click)="getLabels()" class="btn">START AND PLAY !!!</button>
     <button (click)="showScoreBoard()" class="btn">CLASSEMENT</button>
     <button class="btn">RETURN TO LOGIN</button>
   </div>
@@ -27,19 +27,49 @@
     <div class="eye"></div>
   </div>
 </header>
+
 <div *ngIf="displayProfile">
   <app-profil>
 
   </app-profil>
 </div>
-<!-- <div *ngIf="resp">
-  <div [attr.data-questionId]="resp?.questionId">questionId : {{ resp?.questionId }}</div>
-  <div [attr.data-responseId]="resp?.responseId">responseId : {{ resp?.responseId }}</div>
-</div> -->
+
+<!-- Card choix level et theme -->
+
+<div *ngIf="chooseYourTheme">
+  <div class="Selection">
+    <div class="org1">
+      <ng-container *ngFor="let label of labels">
+        <ng-container *ngIf="label.type ==='theme'">
+          <div>{{label.type}}</div>
+          <button (click)="chosenTheme($event)"
+                  [attr.data-themeId]="label.id"
+                  class="theme btn">{{label.label}}</button>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="chooseYourLevel">
+  <div class="Selection">
+    <div class="org2">
+      <ng-container *ngFor="let label of labels">
+        <ng-container *ngIf="label.type ==='level'">
+          <div>{{label.type}}</div>
+          <button (click)="chosenLevel($event)"
+                  [attr.data-levelId]="label.id"
+                  class="level btn">{{label.label}}</button>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>
+
 <div *ngIf="displayGame">
   <app-quizz (send)="resp = $event"
              (nextIndex)="index = $event"
-             [quizz]="quizzModels[index]" *ngIf="quizzModels.length != index">
+             [quizz]="quizzModels[index]" >
   </app-quizz>
 </div>
 
