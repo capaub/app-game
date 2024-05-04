@@ -14,10 +14,18 @@ public class QuizzRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-
+    public List<Map<String,Object>> getTheme(){
+        String sql = "SELECT * FROM `theme`";
+        return this.jdbcTemplate.queryForList(sql);
+    }
 
     public List<Map<String, Object>> callSpRandQuestion(int theme, int level) {
         String sql = "CALL spRandQuestion(?,?)";
         return jdbcTemplate.queryForList(sql, theme, level);
+    }
+
+    public List<Map<String, Object>> getLevel() {
+        String sql = "SELECT * FROM `level`";
+        return this.jdbcTemplate.queryForList(sql);
     }
 }

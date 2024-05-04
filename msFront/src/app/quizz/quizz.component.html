@@ -1,30 +1,10 @@
-<!-- Card choix level et theme
-<div class="Selection">
-
-  <div class="org1">
-    <button (click)="isClick($event)" class="level btn">level 1</button>
-    <button (click)="isClick($event)" class="level btn">level 2</button>
-    <button (click)="isClick($event)" class="level btn">level 3</button>
-  </div>
-
-  <div class="org2">
-    <button (click)="isClick($event)" class="theme btn" >Theme 1</button>
-    <button (click)="isClick($event)" class="theme btn">Theme 2</button>
-    <button (click)="isClick($event)" class="theme btn">Theme 3</button>
-  </div>
-
-</div> -->
-
-
-
-<!-- quizz -->
 <div class="section-quizz">
   <h1 class="question" [attr.data-questionId]="quizz.questionO.id">{{quizz.questionO.question}}</h1>
   <!-- <p>Index (nb question) : {{index}}</p> -->
   <ng-container *ngFor="let response of quizz.responses">
     <button class="responses" (click)="sendResponse(quizz.questionO.id,response.id,quizz)"
-            [attr.data-responseId]="response.id" >{{response.response}}</button>
+            [attr.data-responseId]="response.id" >{{response.response}}
+    </button>
   </ng-container>
   <!-- <div>Point : {{point}}</div> -->
 </div>
-
