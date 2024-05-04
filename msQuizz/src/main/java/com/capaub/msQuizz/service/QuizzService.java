@@ -28,4 +28,13 @@ public class QuizzService {
     public List<Map<String, Object>> callQuizz(int theme, int level){
         return quizzRepository.callSpRandQuestion(theme, level);
     }
+
+    public List<Map<String, Object>> getLabels() {
+
+        List<Map<String, Object>> theme = quizzRepository.getTheme();
+        List<Map<String, Object>> level = quizzRepository.getLevel();
+        theme.addAll(level);
+
+        return theme;
+    }
 }
