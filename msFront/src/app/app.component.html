@@ -1,15 +1,17 @@
 <header class="Header">
+
   <!--
     <div class="title">
       <h1 class="title-h1"> WELCOM HOME </h1>
       <h2 class="title-h1"> , are you ready for a quizz ?!? </h2>
     </div>
   -->
+
   <div class="card1">
-    <button (click)="showProfile()" class="btn">MY PROFIL</button>
-    <button (click)="getLabels()" class="btn">START AND PLAY !!!</button>
-    <button (click)="showScoreBoard()" class="btn">CLASSEMENT</button>
-    <button class="btn">RETURN TO LOGIN</button>
+    <button (click)="showProfile()" class="btn">my profil</button>
+    <button (click)="getLabels()" class="btn">start and play</button>
+    <button (click)="showScoreBoard()" class="btn">classement</button>
+    <button class="btn">return to login</button>
   </div>
 
   <div class="loader">
@@ -26,6 +28,7 @@
     </div>
     <div class="eye"></div>
   </div>
+
 </header>
 
 <div *ngIf="displayProfile">
