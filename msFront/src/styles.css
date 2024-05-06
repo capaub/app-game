@@ -6,6 +6,6 @@ body{
 }
 app-root{
   display: block;
-  background-color: black;
+  background-color: white;
   min-height: 100vh;
 }
