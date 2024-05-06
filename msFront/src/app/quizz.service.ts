@@ -49,37 +49,23 @@ export class QuizzService {
     return labels;
   }
 
-  private transformQuizz(data: any[]): QuizzModel[] {
-    const quizz: QuizzModel[] = [];
-    const groupedQuestions = this.groupByQuestionId(data);
+  private transformQuizz(jsonResponse: any[]): QuizzModel[] {
+    let quizz: QuizzModel[] = [];
 
-    groupedQuestions.forEach((responses) => {
-      const groupData = responses[0];
-      const question = new Question(groupData.id_question, groupData.question);
-      // construction du tableau de Response associe a l'objet Question
-      const responseList = responses.map(responseData => {
-        return new Response(responseData.id_response, responseData.response, responseData.is_true === 1);
-      });
-      quizz.push(new QuizzModel(question, responseList));
-    });
+    // for each grouped data from json response => extract and create QuizzModel
+    jsonResponse.forEach((data) => {
+      const question: Question = new Question(data.id_question,data.question);
+      let responseList: Response[] = [];
+      const responsesId: number[] = data.id_responses.split(",");
+      const responses: string[] = data.responses.split(",");
 
+      for (let i = 0; i < responsesId.length; i++) {
+        const isTrue: boolean = data.responseTrue == responsesId[i];
+        responseList.push(new Response(responsesId[i], responses[i], isTrue));
+      }
+
+      quizz.push(new QuizzModel(question,responseList))
+    })
     return quizz;
-  }
-
-  private groupByQuestionId(data: any[]): Map<any, any[]> {
-    const groupedData = new Map<any, any[]>();
-    data.forEach(response => {
-      const questionId = response.id_question;
-      if (!groupedData.has(questionId)) {
-        groupedData.set(questionId, []);
-      }
-      const groupedDataQuestionId = groupedData.get(questionId);
-      if (Array.isArray(groupedDataQuestionId)) {
-        groupedDataQuestionId.push(response);
-      } else {
-        console.error(`La valeur pour l'ID de question ${questionId} n'est pas un tableau.`);
-      }
-    });
-    return groupedData;
   }
 }
