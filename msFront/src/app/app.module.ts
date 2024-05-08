@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FinalScoreComponent } from './finalScore/finalScore.component';
+import { FinalScoreComponent } from './final-score/final-score.component';
 import { QuizzComponent } from './quizz/quizz.component';
 import {HttpClientModule} from "@angular/common/http";
 import {QuizzService} from "./quizz.service";

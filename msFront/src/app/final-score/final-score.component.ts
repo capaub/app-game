@@ -1,9 +1,9 @@
 import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './finalScore.component.html',
-  styleUrl: './finalScore.component.css'
+  selector: 'app-final-score',
+  templateUrl: './final-score.component.html',
+  styleUrl: './final-score.component.css'
 })
 export class FinalScoreComponent implements OnInit{
   @Input() point!: number;

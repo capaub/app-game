@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FinalScoreComponent } from './finalScore.component';
+import { FinalScoreComponent } from './final-score.component';
 
-describe('MenuComponent', () => {
+describe('FinalScoreComponent', () => {
   let component: FinalScoreComponent;
   let fixture: ComponentFixture<FinalScoreComponent>;
 
@@ -11,7 +11,7 @@ describe('MenuComponent', () => {
       declarations: [FinalScoreComponent]
     })
     .compileComponents();
-
+    
     fixture = TestBed.createComponent(FinalScoreComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
