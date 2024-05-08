@@ -11,7 +11,7 @@ import { Label } from "./model/Label.model";
 })
 
 export class QuizzService {
-  //TODO change url with variables parameters
+
   private getQuizzUrl = `http://localhost:8080/callSpRandQuestion`;
   private getLabelsUrl = "http://localhost:8080/getLabels";
 
@@ -31,6 +31,8 @@ export class QuizzService {
     );
   }
 
+  // for each grouped data from json response =>
+  // extract and create Label then return list of Label
   private transformLabels(data: any[]) {
     let labels:Label[] = [];
     data.forEach(response => {
@@ -49,10 +51,11 @@ export class QuizzService {
     return labels;
   }
 
+  // for each grouped data from json response =>
+  // extract and create QuizzModel then return list of QuizzModel
   private transformQuizz(jsonResponse: any[]): QuizzModel[] {
     let quizz: QuizzModel[] = [];
 
-    // for each grouped data from json response => extract and create QuizzModel
     jsonResponse.forEach((data) => {
       const question: Question = new Question(data.id_question,data.question);
       let responseList: Response[] = [];

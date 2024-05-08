@@ -42,9 +42,9 @@
 <div *ngIf="chooseYourTheme">
   <div class="Selection">
     <div class="org1">
-      <ng-container *ngFor="let label of labels">
+      <ng-container *ngFor="let label of labels; let i = index">
+        <div *ngIf="i === 0">Choix du theme</div>
         <ng-container *ngIf="label.type ==='theme'">
-          <div>{{label.type}}</div>
           <button (click)="chosenTheme($event)"
                   [attr.data-themeId]="label.id"
                   class="theme btn">{{label.label}}</button>
@@ -57,9 +57,9 @@
 <div *ngIf="chooseYourLevel">
   <div class="Selection">
     <div class="org2">
-      <ng-container *ngFor="let label of labels">
+      <ng-container *ngFor="let label of labels; let i = index">
+        <div *ngIf="i == 0">Choix du niveau</div>
         <ng-container *ngIf="label.type ==='level'">
-          <div>{{label.type}}</div>
           <button (click)="chosenLevel($event)"
                   [attr.data-levelId]="label.id"
                   class="level btn">{{label.label}}</button>
@@ -70,10 +70,18 @@
 </div>
 
 <div *ngIf="displayGame">
-  <app-quizz (send)="resp = $event"
+  <app-quizz *ngIf="quizzModels.length != index"
+             (userResponse)="resp($event)"
              (nextIndex)="index = $event"
-             [quizz]="quizzModels[index]" >
+             (timer)="timer = $event"
+             [quizz]="quizzModels[index]"
+             [index]="index" >
   </app-quizz>
+
+<app-final-score *ngIf="quizzModels.length == index "
+                 [point]="countPoint()"
+                 [timer]="timer">
+  </app-final-score>
 </div>
 
 <div *ngIf="displayScoreBoard">
