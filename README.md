@@ -1,7 +1,3 @@
-App Game — mini-suite de microservices pour gérer des quiz/jeux :
-ms-user (auth & profils), ms-quizz (quiz/questions/scores), ms-front (UI).
-Stack : Java 17 / Spring Boot 3, REST, (option Docker Compose), tests JUnit.
-
 # App Game
 
 Mini-système de **quiz/jeux** en microservices :
