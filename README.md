@@ -1,17 +1,21 @@
-[![CI](https://github.com/capaub/app-game/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/capaub/app-game/actions/workflows/ci.yml)
-
 # App Game
 
-Mini-système de **quiz/jeux** en microservices :
-- **ms-user** : authentification, profils joueurs.
-- **ms-quizz** : gestion des quiz, questions, réponses, scores.
-- **ms-front** : interface web.
+[![CI](https://github.com/capaub/app-game/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/capaub/app-game/actions/workflows/ci.yml)
+![Java](https://img.shields.io/badge/Java-17-informational)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-informational)
+![Front](https://img.shields.io/badge/Front-Angular-informational)
 
-## Stack
-Java 17, Spring Boot 3.x, Maven, REST API, (Docker Compose en option), JUnit 5, JaCoCo.
+**App Game** — mini-suite microservices pour quiz/jeux :
+- `msUser` : comptes / authentification
+- `msQuizz` : quiz, questions, réponses, scores
+- `msFront` : interface web (Angular)
+
+Stack : **Java 17 · Spring Boot 3 · REST · Angular** (Docker Compose en option)
+
+---
 
 ## Architecture
 ```mermaid
 flowchart LR
-  Front[ms-front] -->|HTTP| Quizz[ms-quizz]
-  Front -->|HTTP| User[ms-user]
+  Front[msFront (Angular)] -->|HTTP| Quizz[msQuizz (REST)]
+  Front -->|HTTP| User[msUser (REST)]
