@@ -1,4 +1,4 @@
-![CI](https://github.com/capaub/app-game/actions/workflows/ci.yml)
+[![CI](https://github.com/capaub/app-game/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/capaub/app-game/actions/workflows/ci.yml)
 
 # App Game
 
