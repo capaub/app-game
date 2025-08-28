@@ -1,21 +1,21 @@
 # IDE
 
-.idea/
-*.iml
-.vscode/
+**/.idea/
+**/*.iml
+**/.vscode/
 
 # Java / Maven
 
 target/
-*.log
+**/*.log
 
 # Node
 
-node_modules/
-dist/
-build/
+**/node_modules/
+**/dist/
+**/build/
 
 # OS
 
-.DS_Store
-Thumbs.db
+**/.DS_Store
+**/Thumbs.db
