@@ -1,7 +1,5 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output, OnInit, OnChanges, SimpleChanges} from '@angular/core';
 import {QuizzModel} from "../model/Quizz.model";
-import {AppComponent} from "../app.component";
-import {Label} from "../model/Label.model";
 
 @Component({
   selector: 'app-quizz',
@@ -9,15 +7,49 @@ import {Label} from "../model/Label.model";
   styleUrl: './quizz.component.css'
 })
 
-export class QuizzComponent extends AppComponent {
+export class QuizzComponent implements OnInit, OnChanges{
   @Input() quizz!: QuizzModel;
-  @Output() public send = new EventEmitter();
-  @Output() public nextIndex = new EventEmitter();
+  @Input() index!: number;
+  @Output() public userResponse:EventEmitter<[number,number]> = new EventEmitter<[number, number]>();
+  @Output() public nextIndex:EventEmitter<number> = new EventEmitter();
+  @Output() public timer:EventEmitter<number> = new EventEmitter();
 
-  sendResponse(questionId: number, responseId: number, quizz: QuizzModel) {
-    this.send.emit({questionId, responseId});
-    this.nextIndex.emit(this.index + 1);
-    this.index += 1;
-    this.countPoint(responseId, quizz);
+  valueOfTimer = 15;
+  totalTime:number = 0;
+  timerValue: number = this.valueOfTimer;
+  timerInterval: any;
+  ngOnInit() {
+    this.startTimer();
+  }
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['index'] && !changes['index'].firstChange) {
+      this.timerValue = 15;
+      this.startTimer();
+    }
+  }
+
+  sendResponse(questionId: number, responseId: number|null) {
+      this.stopTimer()
+      const q: number = parseInt(String(questionId))
+      const r: number = parseInt(String(responseId))
+      this.userResponse.emit([<number>q, <number>r]);
+      this.nextIndex.emit(this.index + 1);
+      this.timer.emit(this.totalTime)
+  }
+
+  startTimer() {
+    this.timerInterval = setInterval(() => {
+      if (this.timerValue > 0) {
+        this.timerValue--;
+      } else {
+        this.stopTimer();
+        this.sendResponse(this.quizz.questionO.id,null);
+      }
+    }, 1000);
+  }
+
+  stopTimer() {
+    this.totalTime += (this.valueOfTimer - this.timerValue)
+    clearInterval(this.timerInterval);
   }
 }

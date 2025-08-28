@@ -1,25 +1,33 @@
 package com.yohanlambeau.msuser.controller;
 
+import com.yohanlambeau.msuser.dto.AuthentificationDTO;
 import com.yohanlambeau.msuser.service.CurrentSessionService;
+import com.yohanlambeau.msuser.service.JwtService;
 import com.yohanlambeau.msuser.service.UserService;
 import com.yohanlambeau.msuser.service.form.SignUpForm;
-import org.springframework.stereotype.Controller;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.http.MediaType;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
+import java.util.Map;
+
+@RestController
 public class UserController {
 
+    private final AuthenticationManager authenticationManager;
     private final UserService userService;
     private final CurrentSessionService currentSessionService;
+    private final JwtService jwtService;
 
-    public UserController(UserService userService, CurrentSessionService currentSessionService) {
+    public UserController(AuthenticationManager authenticationManager, UserService userService, CurrentSessionService currentSessionService, JwtService jwtService) {
+        this.authenticationManager = authenticationManager;
         this.userService = userService;
         this.currentSessionService = currentSessionService;
+        this.jwtService = jwtService;
     }
 
     @GetMapping("/index")
@@ -36,5 +44,15 @@ public class UserController {
         userService.registration(form);
         currentSessionService.currentSessionUser();
         return new ModelAndView("signin");
+    }
+    @PostMapping( "/connexion")
+    public Map<String, String> connexion(@RequestBody AuthentificationDTO authentificationDTO) {
+        final Authentication authenticate = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(authentificationDTO.mail(),authentificationDTO.password())
+        );
+        if (authenticate.isAuthenticated()) {
+            return this.jwtService.generate(authentificationDTO.mail());
+        }
+        return null;
     }
 }
