@@ -1,3 +1,5 @@
+![CI](https://github.com/capaub/app-game/actions/workflows/ci.yml/badge.svg)
+
 # App Game
 
 Mini-système de **quiz/jeux** en microservices :
