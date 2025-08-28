@@ -15,7 +15,7 @@ Stack : **Java 17 · Spring Boot 3 · REST · Angular** (Docker Compose en optio
 ---
 
 ## Architecture
-```mermaid```
+```mermaid
 flowchart LR
-  Front[msFront (Angular)] -->|HTTP| Quizz[msQuizz (REST)]
-  Front -->|HTTP| User[msUser (REST)]
+  Front[ms-front] -->|HTTP| Quizz[ms-quizz]
+  Front -->|HTTP| User[ms-user]
