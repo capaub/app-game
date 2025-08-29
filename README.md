@@ -5,7 +5,7 @@
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-informational)
 ![Front](https://img.shields.io/badge/Front-Angular-informational)
 
-**App Game** — mini-suite microservices pour quiz/jeux :
+**App Game** — mini-quiz microservices pour quiz/jeux :
 - `msUser` : comptes / authentification
 - `msQuizz` : quiz, questions, réponses, scores
 - `msFront` : interface web (Angular)
